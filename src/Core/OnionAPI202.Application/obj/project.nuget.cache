@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "x5vmz6dOAtAYE/CsYZRwmVwe7PS5GjY/QmezsdtbFk7znggrI0FV8bfV9Y0E3ZXi+jF4JmccsFvWKEQp0Ki/nw==",
+  "dgSpecHash": "GOqwIzI2LiHXhbSV/mSk3830i22kETCYxbUzSrRzJBrf6+GrECsMnObGaePdv7xhBvyx6V7r6Kf0NKX8IOCvoQ==",
   "success": true,
   "projectFilePath": "D:\\CFF\\said\\OnionAPI202\\src\\Core\\OnionAPI202.Application\\OnionAPI202.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Omen\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

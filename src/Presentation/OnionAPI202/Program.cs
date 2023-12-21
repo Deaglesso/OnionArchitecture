@@ -1,3 +1,5 @@
+using OnionAPI202.Application.ServiceRegistration;
+using OnionAPI202.Persistance.ServiceRegistration;
 namespace OnionAPI202
 {
     public class Program
@@ -12,6 +14,8 @@ namespace OnionAPI202
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddApplicationServices();
+            builder.Services.AddPersistenceServices(builder.Configuration);
 
             var app = builder.Build();
 

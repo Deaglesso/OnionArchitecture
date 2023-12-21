@@ -1,0 +1,15 @@
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\bin\Debug\net6.0\OnionAPI202.Application.deps.json
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\bin\Debug\net6.0\OnionAPI202.Application.dll
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\bin\Debug\net6.0\OnionAPI202.Application.pdb
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\bin\Debug\net6.0\OnionAPI202.Domain.dll
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\bin\Debug\net6.0\OnionAPI202.Domain.pdb
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\OnionAPI202.Application.csproj.AssemblyReference.cache
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\OnionAPI202.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\OnionAPI202.Application.AssemblyInfoInputs.cache
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\OnionAPI202.Application.AssemblyInfo.cs
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\OnionAPI202.Application.csproj.CoreCompileInputs.cache
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\OnionAPI202.Application.csproj.CopyComplete
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\OnionAPI202.Application.dll
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\refint\OnionAPI202.Application.dll
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\OnionAPI202.Application.pdb
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Application\obj\Debug\net6.0\ref\OnionAPI202.Application.dll

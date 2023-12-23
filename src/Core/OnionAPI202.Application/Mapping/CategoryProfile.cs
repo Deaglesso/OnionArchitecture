@@ -17,6 +17,7 @@ namespace OnionAPI202.Application.Mapping
 
             CreateMap<CreateCategoryDTO, Category>();
 
+            CreateMap<UpdateCategoryDTO, Category>().ReverseMap();
         }
     }
 }

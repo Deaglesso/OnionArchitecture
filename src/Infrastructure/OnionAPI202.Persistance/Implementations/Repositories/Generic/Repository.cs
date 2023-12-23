@@ -33,7 +33,7 @@ namespace OnionAPI202.Persistance.Implementations.Repositories.Generic
             _table.Remove(entity);
         }
 
-        public IQueryable<T> GetAllAsync(Expression<Func<T, bool>> expression = null, Expression<Func<T, object>> orderExpression = null, bool isDescending = false, int skip = 0, int limit = 0, bool isTracked = false, params string[] includes)
+        public IQueryable<T> GetAllAsync(Expression<Func<T, bool>> expression = null, Expression<Func<T, object>> orderExpression = null, bool isDescending = false, int skip = 0, int limit = 0, bool isTracked = false, bool ignoreQuery = false, params string[] includes)
         {
 
             IQueryable<T> query = _table;
@@ -67,6 +67,7 @@ namespace OnionAPI202.Persistance.Implementations.Repositories.Generic
                     query = query.Include(includes[i]);
                 }
             }
+            if (ignoreQuery) query = query.IgnoreQueryFilters(); 
 
             return isTracked ? query : query.AsNoTracking();
         }
@@ -80,6 +81,12 @@ namespace OnionAPI202.Persistance.Implementations.Repositories.Generic
         public async Task SaveChangesAsync()
         {
             await _db.SaveChangesAsync();
+        }
+
+        public void SoftDelete(T entity)
+        {
+            entity.DeletedAt = DateTime.Now;
+            Update(entity); 
         }
 
         public void Update(T entity)

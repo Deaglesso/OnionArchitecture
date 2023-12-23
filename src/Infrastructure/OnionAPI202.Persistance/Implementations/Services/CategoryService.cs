@@ -16,55 +16,48 @@ namespace OnionAPI202.Persistance.Implementations.Services
     {
         private readonly ICategoryRepository _repository;
         private readonly IMapper _mapper;
-
-        public CategoryService(ICategoryRepository repository,IMapper mapper)
+        public CategoryService(ICategoryRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<GetCategoryDTO> GetAsync(int id)
-        {
-            Category category = await _repository.GetByIdAsync(id);
-            if (category == null) throw new Exception("not found");
-
-            return new GetCategoryDTO(category.Id, category.Name);
-            
-        }
-
         public async Task<ICollection<GetCategoryDTO>> GetAllAsync(int page, int limit)
         {
-            ICollection<Category> categories = await _repository.GetAllAsync(skip: (page - 1) * limit, limit: limit).ToListAsync();
-            ICollection<GetCategoryDTO> dtos = _mapper.Map<ICollection<GetCategoryDTO>>(categories);
-            return dtos;
+            ICollection<Category> categories = await _repository.GetAllAsync(skip: (page - 1) * limit, limit: limit,isTracked: false).ToListAsync();
+            var categoryDTOs = _mapper.Map<ICollection<GetCategoryDTO>>(categories);
+            return categoryDTOs;
         }
 
         public async Task CreateAsync(CreateCategoryDTO categoryDTO)
         {
-            
             await _repository.AddAsync(_mapper.Map<Category>(categoryDTO));
-            await _repository.SaveChangesAsync();
-        }
-
-        public async Task UpdateAsync(int id, CreateCategoryDTO categoryDTO)
-        {
-            Category category = await _repository.GetByIdAsync(id);
-
-            if (category == null) throw new Exception("not found");
-
-            category.Name = categoryDTO.Name;
-
-            _repository.Update(category);
             await _repository.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
             Category category = await _repository.GetByIdAsync(id);
-
-            if (category == null) throw new Exception("not found");
-
+            if (category is null) throw new Exception("Not found");
             _repository.Delete(category);
+            await _repository.SaveChangesAsync();
+        }
+
+
+        public async Task UpdateAsync(int id, UpdateCategoryDTO categoryDTO)
+        {
+            Category category = await _repository.GetByIdAsync(id);
+            if (category is null) throw new Exception("Not found");
+            _mapper.Map(categoryDTO, category);
+            _repository.Update(category);
+            await _repository.SaveChangesAsync();
+        }
+
+        public async Task SoftDeleteAsync(int id)
+        {
+            Category category = await _repository.GetByIdAsync(id);
+            if (category is null) throw new Exception();
+            _repository.SoftDelete(category);
             await _repository.SaveChangesAsync();
         }
     }

@@ -74,3 +74,6 @@ D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\obj\Debug\net6.0\OnionAPI20
 D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\obj\Debug\net6.0\ref\OnionAPI202.dll
 D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\AutoMapper.dll
 D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\FluentValidation.dll
+D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

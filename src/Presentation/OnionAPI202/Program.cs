@@ -1,5 +1,7 @@
+using FluentValidation.AspNetCore;
 using OnionAPI202.Application.ServiceRegistration;
 using OnionAPI202.Persistance.ServiceRegistration;
+using OnionAPI202.Application.Validators;
 namespace OnionAPI202
 {
     public class Program
@@ -14,8 +16,8 @@ namespace OnionAPI202
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddApplicationServices();
             builder.Services.AddPersistenceServices(builder.Configuration);
+            builder.Services.AddApplicationServices();
 
             var app = builder.Build();
 

@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "GOqwIzI2LiHXhbSV/mSk3830i22kETCYxbUzSrRzJBrf6+GrECsMnObGaePdv7xhBvyx6V7r6Kf0NKX8IOCvoQ==",
+  "dgSpecHash": "EkUK3qAt99C3NuNPCTy5wK3DuFYxlbPlP2uEaKewkEX1Q8e7TzguOvMx+Pc4ERlpQ4upFA2SrwagY5OVdlQHMQ==",
   "success": true,
   "projectFilePath": "D:\\CFF\\said\\OnionAPI202\\src\\Core\\OnionAPI202.Application\\OnionAPI202.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Omen\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",

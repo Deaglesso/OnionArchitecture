@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "lYorLvXQg31ary23pETcrub8fs6HGdrsz7YoleVWqU4dI9eNfTVoSTZEYZ/Q526D9wcoRP5Hul3vwECmbMb1Zg==",
+  "dgSpecHash": "zzeEl0QGXoaTv45w/FuNQoxj/LZflaGU3S1ziHV6hjnYOJsHlipBknGF71+aJCrk08Gtd4Rs3DeNnCApufaDpQ==",
   "success": true,
   "projectFilePath": "D:\\CFF\\said\\OnionAPI202\\src\\Infrastructure\\OnionAPI202.Persistance\\OnionAPI202.Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Omen\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Omen\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Omen\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

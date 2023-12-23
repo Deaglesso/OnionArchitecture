@@ -173,6 +173,76 @@ namespace OnionAPI202.Persistance.DAL.Migrations
                     b.ToTable("ProductColors");
                 });
 
+            modelBuilder.Entity("OnionAPI202.Domain.Entities.ProductTag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TagId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("ProductTag");
+                });
+
+            modelBuilder.Entity("OnionAPI202.Domain.Entities.Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Tag");
+                });
+
             modelBuilder.Entity("OnionAPI202.Domain.Entities.Product", b =>
                 {
                     b.HasOne("OnionAPI202.Domain.Entities.Category", "Category")
@@ -203,6 +273,25 @@ namespace OnionAPI202.Persistance.DAL.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("OnionAPI202.Domain.Entities.ProductTag", b =>
+                {
+                    b.HasOne("OnionAPI202.Domain.Entities.Product", "Product")
+                        .WithMany("ProductTags")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnionAPI202.Domain.Entities.Tag", "Tag")
+                        .WithMany()
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Tag");
+                });
+
             modelBuilder.Entity("OnionAPI202.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Products");
@@ -216,6 +305,8 @@ namespace OnionAPI202.Persistance.DAL.Migrations
             modelBuilder.Entity("OnionAPI202.Domain.Entities.Product", b =>
                 {
                     b.Navigation("ProductColors");
+
+                    b.Navigation("ProductTags");
                 });
 #pragma warning restore 612, 618
         }

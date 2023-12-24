@@ -24,7 +24,7 @@ namespace OnionAPI202.Persistance.Implementations.Services
 
         public async Task<ICollection<GetTagDTO>> GetAllAsync(int page, int limit)
         {
-            ICollection<Tag> tags = await _repository.GetAllAsync(skip: (page - 1) * limit, limit: limit, isTracked: false).ToListAsync();
+            ICollection<Tag> tags = await _repository.GetAllWhereAsync(skip: (page - 1) * limit, limit: limit, isTracked: false).ToListAsync();
             var tagDTOs = _mapper.Map<ICollection<GetTagDTO>>(tags);
             return tagDTOs;
         }

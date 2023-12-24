@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnionAPI202.Domain.Entities;
 using OnionAPI202.Domain.Entities.Common;
+using OnionAPI202.Persistance.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,9 +24,7 @@ namespace OnionAPI202.Persistance.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Category>().HasQueryFilter(c => c.DeletedAt == null);
-
-            modelBuilder.Entity<Tag>().HasQueryFilter(c => c.DeletedAt == null);
+            modelBuilder.ApplyQueryFilters();
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
           

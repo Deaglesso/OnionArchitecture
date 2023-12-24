@@ -24,7 +24,7 @@ namespace OnionAPI202.Persistance.Implementations.Services
 
         public async Task<ICollection<GetCategoryDTO>> GetAllAsync(int page, int limit)
         {
-            ICollection<Category> categories = await _repository.GetAllAsync(skip: (page - 1) * limit, limit: limit,isTracked: false).ToListAsync();
+            ICollection<Category> categories = await _repository.GetAllWhereAsync(skip: (page - 1) * limit, limit: limit,isTracked: false).ToListAsync();
             var categoryDTOs = _mapper.Map<ICollection<GetCategoryDTO>>(categories);
             return categoryDTOs;
         }
@@ -55,7 +55,7 @@ namespace OnionAPI202.Persistance.Implementations.Services
 
         public async Task SoftDeleteAsync(int id)
         {
-            Category category = await _repository.GetByIdAsync(id);
+            Category category = await _repository.GetByIdAsync(id,true);
             if (category is null) throw new Exception();
             _repository.SoftDelete(category);
             await _repository.SaveChangesAsync();

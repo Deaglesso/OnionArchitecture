@@ -33,9 +33,26 @@ namespace OnionAPI202.Persistance.Implementations.Repositories.Generic
             _table.Remove(entity);
         }
 
-        public IQueryable<T> GetAllAsync(Expression<Func<T, bool>> expression = null, Expression<Func<T, object>> orderExpression = null, bool isDescending = false, int skip = 0, int limit = 0, bool isTracked = false, bool ignoreQuery = false, params string[] includes)
-        {
+        
 
+        public IQueryable<T> GetAllAsync(bool isTracked = false, bool ignoreQuery = false, params string[] includes)
+        {
+            IQueryable<T> query = _table;
+            if (ignoreQuery) query = query.IgnoreQueryFilters();
+            if (isTracked) query = query.AsNoTracking();
+            if (includes is not null)
+            {
+                for (int i = 0; i < includes.Length; i++)
+                {
+                    query = query.Include(includes[i]);
+                }
+            }
+            return query;
+
+        }
+
+        public IQueryable<T> GetAllWhereAsync(Expression<Func<T, bool>>? expression = null, Expression<Func<T, object>>? orderExpression = null, bool isDescending = false, int skip = 0, int limit = 0, bool isTracked = false, bool ignoreQuery = false, params string[] includes)
+        {
             IQueryable<T> query = _table;
 
 
@@ -67,15 +84,48 @@ namespace OnionAPI202.Persistance.Implementations.Repositories.Generic
                     query = query.Include(includes[i]);
                 }
             }
-            if (ignoreQuery) query = query.IgnoreQueryFilters(); 
+            if (ignoreQuery) query = query.IgnoreQueryFilters();
 
             return isTracked ? query : query.AsNoTracking();
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracked = false, bool ignoreQuery = false, params string[] includes)
         {
-            T entity = await _table.FirstOrDefaultAsync(c => c.Id == id);
-            return entity;
+            IQueryable<T> query = _table.Where(expression);
+            if (ignoreQuery) query = query.IgnoreQueryFilters();
+            if (!isTracked) query = query.AsNoTracking();
+            if (includes is not null)
+            {
+                for (int i = 0; i < includes.Length; i++)
+                {
+                    query = query.Include(includes[i]);
+                }
+            }
+            return await query.FirstOrDefaultAsync();
+        }
+
+        
+
+        public async Task<T> GetByIdAsync(int id, bool isTracked = false, bool ignoreQuery = false, params string[] includes)
+        {
+            IQueryable<T> query = _table.Where(x => x.Id == id);
+            if (ignoreQuery) query = query.IgnoreQueryFilters();
+            if (!isTracked) query = query.AsNoTracking();
+            if (includes is not null)
+            {
+                for (int i = 0; i < includes.Length; i++)
+                {
+                    query = query.Include(includes[i]);
+                }
+            }
+            return  await query.FirstOrDefaultAsync();
+
+        }
+
+        public void Recover(T entity)
+        {
+            entity.DeletedAt = null;
+            Update(entity);
         }
 
         public async Task SaveChangesAsync()

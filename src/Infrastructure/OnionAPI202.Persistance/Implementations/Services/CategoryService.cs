@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using OnionAPI202.Application.Abstractions.Repositories;
 using OnionAPI202.Application.Abstractions.Services;
 using OnionAPI202.Application.DTOs.Categories;
+using OnionAPI202.Application.DTOs.Tags;
 using OnionAPI202.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,12 @@ namespace OnionAPI202.Persistance.Implementations.Services
             ICollection<Category> categories = await _repository.GetAllWhereAsync(skip: (page - 1) * limit, limit: limit,isTracked: false).ToListAsync();
             var categoryDTOs = _mapper.Map<ICollection<GetCategoryDTO>>(categories);
             return categoryDTOs;
+        }
+        public async Task<GetCategoryDTO> GetByIdAsync(int id)
+        {
+            Category category = await _repository.GetByIdAsync(id);
+            GetCategoryDTO dto = _mapper.Map<GetCategoryDTO>(category);
+            return dto;
         }
 
         public async Task CreateAsync(CreateCategoryDTO categoryDTO)
@@ -60,6 +67,14 @@ namespace OnionAPI202.Persistance.Implementations.Services
             _repository.SoftDelete(category);
             await _repository.SaveChangesAsync();
         }
+        public async Task RecoverAsync(int id)
+        {
+            Category category = await _repository.GetByIdAsync(id, ignoreQuery: true);
+            if (category is null) throw new Exception();
+            _repository.Recover(category);
+            await _repository.SaveChangesAsync();
+        }
+
     }
 }
 

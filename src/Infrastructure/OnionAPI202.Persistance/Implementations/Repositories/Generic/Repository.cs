@@ -121,6 +121,10 @@ namespace OnionAPI202.Persistance.Implementations.Repositories.Generic
             return  await query.FirstOrDefaultAsync();
 
         }
+        public async Task<bool> IsExistAsync(Expression<Func<T,bool>> expression)
+        {
+            return await _table.AnyAsync(expression);
+        }
 
         public void Recover(T entity)
         {

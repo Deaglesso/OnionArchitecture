@@ -15,7 +15,7 @@ namespace OnionAPI202.Application.Abstractions.Repositories.Generic
 
         Task<T> GetByIdAsync(int id, bool isTracked = false, bool ignoreQuery = false, params string[] includes);
         Task<T> GetByExpressionAsync(Expression<Func<T, bool>> expression, bool isTracked = false, bool ignoreQuery = false, params string[] includes);
-
+        Task<bool> IsExistAsync(Expression<Func<T,bool>> expression);
         Task AddAsync(T entity);
         void Update(T entity);
         void Delete(T entity);

@@ -21,7 +21,11 @@ namespace OnionAPI202.Controllers
         {
             return Ok(await _service.GetAllAsync(page, limit));
         }
-
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            return Ok(await _service.GetByIdAsync(id));
+        }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromForm] CreateTagDTO tagDTO)
@@ -41,6 +45,13 @@ namespace OnionAPI202.Controllers
         {
             if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
             await _service.SoftDeleteAsync(id);
+            return NoContent();
+        }
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> Recover(int id)
+        {
+            if (id <= 0) return StatusCode(StatusCodes.Status400BadRequest);
+            await _service.RecoverAsync(id);
             return NoContent();
         }
     }

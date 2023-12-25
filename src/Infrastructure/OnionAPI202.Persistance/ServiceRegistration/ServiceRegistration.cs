@@ -24,6 +24,8 @@ namespace OnionAPI202.Persistance.ServiceRegistration
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ITagRepository, TagRepository>();
             services.AddScoped<ITagService, TagService>();
+            services.AddScoped<IColorRepository, ColorRepository>();
+            services.AddScoped<IColorService, ColorService>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
 

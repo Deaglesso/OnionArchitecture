@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using OnionAPI202.Application.Abstractions.Repositories;
 using OnionAPI202.Application.Abstractions.Services;
+using OnionAPI202.Application.DTOs.Product;
 using OnionAPI202.Application.DTOs.Tags;
 using OnionAPI202.Domain.Entities;
 using System;
@@ -28,6 +29,12 @@ namespace OnionAPI202.Persistance.Implementations.Services
             var tagDTOs = _mapper.Map<ICollection<GetTagDTO>>(tags);
             return tagDTOs;
         }
+        public async Task<GetTagDTO> GetByIdAsync(int id)
+        {
+            Tag tag = await _repository.GetByIdAsync(id);
+            GetTagDTO dto = _mapper.Map<GetTagDTO>(tag);
+            return dto;
+        }
 
         public async Task CreateAsync(CreateTagDTO tagDTO)
         {
@@ -52,9 +59,19 @@ namespace OnionAPI202.Persistance.Implementations.Services
             await _repository.SaveChangesAsync();
         }
 
-        public Task SoftDeleteAsync(int id)
+        public async Task SoftDeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            Tag tag = await _repository.GetByIdAsync(id, true);
+            if (tag is null) throw new Exception();
+            _repository.SoftDelete(tag);
+            await _repository.SaveChangesAsync();
+        }
+        public async Task RecoverAsync(int id)
+        {
+            Tag tag = await _repository.GetByIdAsync(id, ignoreQuery:true);
+            if (tag is null) throw new Exception();
+            _repository.Recover(tag);
+            await _repository.SaveChangesAsync();
         }
     }
 }

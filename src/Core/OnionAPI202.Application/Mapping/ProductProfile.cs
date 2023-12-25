@@ -14,6 +14,9 @@ namespace OnionAPI202.Application.Mapping
         public ProductProfile()
         {
             CreateMap<GetProductDTO,Product>().ReverseMap();
+            CreateMap<Product, DetailedProductDTO>().ReverseMap();
+            CreateMap<CreateProductDTO, Product>();
+            CreateMap<UpdateProductDTO, Product>();
 
         }
     }

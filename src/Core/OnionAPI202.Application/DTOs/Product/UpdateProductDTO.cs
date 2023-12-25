@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnionAPI202.Application.DTOs.Product
 {
-    public record CreateProductDTO(string Name,decimal Price,string? Description,string SKU,int CategoryId,ICollection<int>? ColorIds, ICollection<int>? TagIds);
-    
+
+    public record UpdateProductDTO(string Name, decimal Price, string? Description, string SKU, int CategoryId, ICollection<int>? ColorIds, ICollection<int>? TagIds);
+
 }

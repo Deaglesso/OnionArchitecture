@@ -10,11 +10,12 @@ namespace OnionAPI202.Application.Abstractions.Services
     public interface ICategoryService
     {
         Task<ICollection<GetCategoryDTO>> GetAllAsync(int page, int limit);
-        //Task<GetCategoryDTO> GetAsync(int id);
+        Task<GetCategoryDTO> GetByIdAsync(int id);
         Task CreateAsync(CreateCategoryDTO categoryDTO);
         Task UpdateAsync(int id, UpdateCategoryDTO categoryDTO);
         Task DeleteAsync(int id);
         Task SoftDeleteAsync(int id);
+        Task RecoverAsync(int id);
 
     }
 }

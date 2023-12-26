@@ -77,3 +77,8 @@ D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\AutoMapper
 D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\FluentValidation.dll
 D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\CFF\said\OnionAPI202\src\Presentation\OnionAPI202\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

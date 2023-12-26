@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using OnionAPI202.Domain.Entities;
 using OnionAPI202.Domain.Entities.Common;
 using OnionAPI202.Persistance.Common;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace OnionAPI202.Persistance.DAL
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {

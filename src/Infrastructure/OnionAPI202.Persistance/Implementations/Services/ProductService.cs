@@ -94,7 +94,7 @@ namespace OnionAPI202.Persistance.Implementations.Services
         public async Task UpdateAsync(int id,UpdateProductDTO dto)
         {
             string[] include = { $"{nameof(Product.ProductColors)}", $"{nameof(Product.ProductTags)}" };
-            Product existed = await _repository.GetByIdAsync(id, includes: include);
+            Product existed = await _repository.GetByIdAsync(id, includes: include,isTracked:true);
             if (existed is null) throw new Exception("Not found");
 
 
@@ -106,7 +106,8 @@ namespace OnionAPI202.Persistance.Implementations.Services
             if (dto.CategoryId != existed.CategoryId)
                 if (!await _categoryRepository.IsExistAsync(c => c.Id == dto.CategoryId))
                     throw new Exception("Category Not Found");
-
+            //123
+            //234
 
             existed = _mapper.Map(dto, existed);
 

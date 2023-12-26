@@ -9,3 +9,4 @@ D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Domain\obj\Debug\net6.0\OnionAPI202
 D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Domain\obj\Debug\net6.0\refint\OnionAPI202.Domain.dll
 D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Domain\obj\Debug\net6.0\OnionAPI202.Domain.pdb
 D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Domain\obj\Debug\net6.0\ref\OnionAPI202.Domain.dll
+D:\CFF\said\OnionAPI202\src\Core\OnionAPI202.Domain\obj\Debug\net6.0\OnionAPI202.Domain.csproj.AssemblyReference.cache

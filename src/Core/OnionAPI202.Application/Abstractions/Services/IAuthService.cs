@@ -10,7 +10,7 @@ namespace OnionAPI202.Application.Abstractions.Services
     public interface IAuthService
     {
         Task Register(RegisterDTO dto);
-        Task Login(LoginDTO dto);
+        Task<string> Login(LoginDTO dto);
 
 
     }

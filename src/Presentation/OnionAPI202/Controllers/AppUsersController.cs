@@ -23,5 +23,11 @@ namespace OnionAPI202.Controllers
             return StatusCode(StatusCodes.Status204NoContent);
 
         }
+        [HttpPost("[Action]")]
+        public async Task<IActionResult> Login([FromForm] LoginDTO dto)
+        {
+
+            return StatusCode(StatusCodes.Status200OK, await _service.Login(dto));
+        }
     }
 }
